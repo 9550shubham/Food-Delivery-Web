@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Ordering Website</title>
+    <link rel="stylesheet" type="text/css" href="home.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Food Ordering Website</h1>
+            <div class="user-actions">
+                <a href="login.html">Login</a>
+                <a href="signup.html">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Find Delicious Food Near You</h2>
+        <form id="search-form">
+            <select name="location" id="location-select">
+                <option value="thapar-campus">Thapar Campus</option>
+                <option value="campus-1">Campus 1</option>
+                <option value="campus-2">Campus 2</option>
+            </select>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript code to control redirection
+        document.getElementById('search-form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            const locationSelect = document.getElementById('location-select');
+            const selectedValue = locationSelect.value;
+
+            if (selectedValue === 'thapar-campus') {
+                window.location.href = 'thapar_restro.html'; // Redirect to Thapar Campus page
+            } else {
+                // Redirect to a custom 404 page for invalid selections
+                window.location.href = '404.html';
+            }
+        });
+    </script>
+</body>
+</html>
