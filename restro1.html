@@ -3,6 +3,73 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="restro1.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>LIST PRODUCT</h1>
+            <div class="iconCart">
+                <img src="images/icon.png">
+                <div class="totalQuantity">0</div>
+            </div>
+        </header>
+
+        <div class="listProduct">
+        </div>
+    </div>
+
+    <div class="cart">
+        <h2>
+            CART
+        </h2>
+
+        <div class="listCart">
+        </div>
+
+        <div class="buttons">
+            <div class="close">
+                CLOSE
+            </div>
+            <div class="checkout">
+                <a href="checkout.html">CHECKOUT</a>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="restro1.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -25,11 +92,11 @@
         </div>
     </div>
     <div class="card">
-        <h1>Card</h1>
+        <h1>CART</h1>
         <ul class="listCard">
         </ul>
         <div class="checkOut">
-            <div class="total">0</div>
+            <div class="total" onclick="goToCart()">0</div>
             <div class="closeShopping">Close</div>
         </div>
     </div>
@@ -46,6 +113,7 @@
         openShopping.addEventListener('click', () => {
             body.classList.add('active');
         })
+       
         closeShopping.addEventListener('click', () => {
             body.classList.remove('active');
         })
@@ -88,7 +156,9 @@
                 price: 120000
             }
         ];
+       
         let listCards = [];
+
         function initApp() {
             products.forEach((value, key) => {
                 let newDiv = document.createElement('div');
@@ -102,14 +172,23 @@
             })
         }
         initApp();
+        
         function addToCard(key) {
             if (listCards[key] == null) {
                 // copy product form list to list card
                 listCards[key] = JSON.parse(JSON.stringify(products[key]));
                 listCards[key].quantity = 1;
             }
+            localStorage.setItem('cart', JSON.stringify(listCards));
             reloadCard();
         }
+
+        function goToCart() {
+            localStorage.setItem('cart', JSON.stringify(listCards));
+            location.href = 'cart.html';
+
+        }
+
         function reloadCard() {
             listCard.innerHTML = '';
             let count = 0;
@@ -134,6 +213,7 @@
             total.innerText = totalPrice.toLocaleString();
             quantity.innerText = count;
         }
+
         function changeQuantity(key, quantity) {
             if (quantity == 0) {
                 delete listCards[key];
@@ -149,7 +229,7 @@
 
 </html>
 
-
+ -->
 
 
 
