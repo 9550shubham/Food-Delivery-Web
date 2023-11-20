@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Page</title>
     <link rel="stylesheet" href="admin.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
 </head>
+
 <body>
 
     <button onclick="openUpdateContainer()">Update</button>
@@ -18,21 +21,35 @@
         <ul id="itemList">
             <li>Item 1</li>
             <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" onchange="toggleSwitch(this)">
                 <span class="slider round"></span>
-              </label>
+            </label>
             <li>Item 2</li>
             <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" onchange="toggleSwitch(this)">
                 <span class="slider round"></span>
-              </label>
+            </label>
             <li>Item 3</li>
-            <!-- Add more items as needed -->
+            <button onclick="saveCheckedItems()">Save</button>
         </ul>
-        
     </div>
 
+    <!-- Display Checked Items -->
+    <ul id="checkedItemsList"></ul>
+
     <script>
+        let checkedItems = [];
+
+        function toggleSwitch(checkbox) {
+            if (checkbox.checked) {
+                // do this
+                console.log('Checked');
+            } else {
+                // do that
+                console.log('Not checked');
+            }
+        }
+
         function openUpdateContainer() {
             // Show the container
             document.getElementById('updateContainer').style.display = 'block';
@@ -42,7 +59,34 @@
             // Hide the container
             document.getElementById('updateContainer').style.display = 'none';
         }
+
+        function saveCheckedItems() {
+            // Save checked items to the list
+            const itemList = document.getElementById('itemList').querySelectorAll('input[type="checkbox"]');
+            checkedItems = Array.from(itemList).filter(item => item.checked).map(item => item.parentElement.previousElementSibling.textContent);
+
+            // Display checked items below the "Update" button
+            displayCheckedItems();
+
+            // Clear the list of checked items
+            clearCheckedItems();
+        }
+
+        function displayCheckedItems() {
+            const checkedItemsList = document.getElementById('checkedItemsList');
+            checkedItemsList.innerHTML = '';
+            checkedItems.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = item;
+                checkedItemsList.appendChild(listItem);
+            });
+        }
+
+        function clearCheckedItems() {
+            checkedItems = [];
+        }
     </script>
 
 </body>
+
 </html>
