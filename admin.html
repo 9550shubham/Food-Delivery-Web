@@ -12,29 +12,84 @@
 
 <body>
 
-    <button onclick="openUpdateContainer()">Update</button>
+    <!-- <button onclick="openUpdateContainer()">Update</button> -->
+    <p class="outsideText">Hey Admin!👋 There you go for the updation of the items list</p>
+
+    <button class="updateButton" onclick="openUpdateContainer()">Update</button>
 
     <!-- Container -->
     <div id="updateContainer">
         <span class="closeButton" onclick="closeUpdateContainer()">&times;</span>
-        <h2>Update Container</h2>
+        <h2>Select the items you want to update:</h2>
         <ul id="itemList">
-            <li>Item 1</li>
-            <label class="switch">
-                <input type="checkbox" onchange="toggleSwitch(this)">
-                <span class="slider round"></span>
-            </label>
-            <li>Item 2</li>
-            <label class="switch">
-                <input type="checkbox" onchange="toggleSwitch(this)">
-                <span class="slider round"></span>
-            </label>
-            <li>Item 3</li>
+            <li>
+                <div class="item-info">
+                    <span class="item-name">Item 1</span>
+                    <span class="item-price">$10.00</span>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" onchange="toggleSwitch(this)">
+                    <span class="slider round"></span>
+                </label>
+            </li>
+            <li>
+                <div class="item-info">
+                    <span class="item-name">Item 2</span>
+                    <span class="item-price">$20.00</span>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" onchange="toggleSwitch(this)">
+                    <span class="slider round"></span>
+                </label>
+            </li>
+            <li>
+                <div class="item-info">
+                    <span class="item-name">Item 3</span>
+                    <span class="item-price">$30.00</span>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" onchange="toggleSwitch(this)">
+                    <span class="slider round"></span>
+                </label>
+            </li>
+            <li>
+                <div class="item-info">
+                <span class="item-name">Item 4</span>
+                <span class="item-price">$40.00</span>
+            </div>
+                <label class="switch">
+                    <input type="checkbox" onchange="toggleSwitch(this)">
+                    <span class="slider round"></span>
+                </label>
+            </li>
+            <li>
+                <div class="item-info">
+                <span class="item-name">Item 5</span>
+                <span class="item-price">$50.00</span>
+            </div>
+                <label class="switch">
+                    <input type="checkbox" onchange="toggleSwitch(this)">
+                    <span class="slider round"></span>
+                </label>
+            </li>
+            <li>
+                <div class="item-info">
+                    <span class="item-name">Item 6</span>
+                    <span class="item-price">$60.00</span>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" onchange="toggleSwitch(this)">
+                    <span class="slider round"></span>
+                </label>
+            </li>
+            <br>
+            <br>
             <button onclick="saveCheckedItems()">Save</button>
         </ul>
     </div>
 
     <!-- Display Checked Items -->
+    <div class="listText">Available List of Items</div>
     <ul id="checkedItemsList"></ul>
 
     <script>
@@ -62,11 +117,17 @@
 
         function saveCheckedItems() {
             // Save checked items to the list
-            const itemList = document.getElementById('itemList').querySelectorAll('input[type="checkbox"]');
-            checkedItems = Array.from(itemList).filter(item => item.checked).map(item => item.parentElement.previousElementSibling.textContent);
+            const itemList = document.getElementById('itemList').querySelectorAll('li');
+
+            checkedItems = Array.from(itemList).filter(item => {
+                const checkbox = item.querySelector('input[type="checkbox"]');
+                return checkbox && checkbox.checked;
+            }).map(item => item.textContent.trim());
 
             // Display checked items below the "Update" button
             displayCheckedItems();
+
+            closeUpdateContainer();
 
             // Clear the list of checked items
             clearCheckedItems();
