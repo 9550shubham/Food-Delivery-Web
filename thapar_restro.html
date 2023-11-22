@@ -5,39 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thapar Campus Restaurants</title>
     <link rel="stylesheet" type="text/css" href="thapar_restro.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran:wght@200&family=Courgette&family=Edu+TAS+Beginner:wght@700&family=Lato:wght@300;900&family=Mukta:wght@700&family=Mulish:wght@300&family=Open+Sans&family=PT+Sans:ital,wght@1,700&family=Poppins:wght@300&family=Raleway:wght@100&family=Roboto+Condensed:wght@700&family=Roboto+Slab&family=Roboto:wght@300&family=Source+Sans+Pro:wght@300&display=swap");
+      </style>
 </head>
 <body>
-    <header>
+    <!-- <header>
         <div class="container">
             <h1>Thapar Campus Restaurants</h1>
         </div>
-    </header>
-
+    </header> -->
+    <nav class="navbar">
+        <div class="container">
+          <div class="logo">
+            <a href="/Food-Delivery-Web/home.html"><img src="/Food-Delivery-Web/images/Group 10.png" alt="Logo" onclick=""></a>
+            
+          </div>
+          <div class="menu">
+            <ul>
+              <li class="nav-opt"><a href="/Food-Delivery-Web/home.html">Home</a></li>
+              <li class="nav-opt"><a href="#about">About Us</a></li>
+              <li class="nav-opt"><a href="#partners">Our Partners</a></li>
+              <li class="cart"><a href="/Food-Delivery-Web"></a></li>
+              <li class="signup"><a href="/Food-Delivery-Web/signup.html"></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     <div class="container">
         <div class="restaurant-list">
-            <div class="restaurant-card" onclick="location.href='restro1.html';">
-                <img src="restaurant1.jpg" alt="Restaurant 1">
-                <h2>Restaurant 1</h2>
-                <p>Enjoy delicious food from Restaurant 1 at Thapar Campus.</p>
-                <p>Location: Near Campus Building A</p>
-                <p>Phone: 123-456-7890</p>
-            </div>
+              <div class="restaurant-card">
+                <img src="/Food-Delivery-Web/images/rest1.jpg" alt="Restaurant Image">
+                <div class="restaurant-info">
+                  <h3>G-Block Cafe</h3>
+                  <p>All Delicious food at your place</p>
+                  <a href="/Food-Delivery-Web/restro1.html" class="order-button">Order Here</a>
+                </div>
+              </div>
 
-            <div class="restaurant-card" onclick="location.href='restro2.html';">
-                <img src="restaurant2.jpg" alt="Restaurant 2">
-                <h2>Restaurant 2</h2>
-                <p>Restaurant 2 offers a variety of cuisines at Thapar Campus.</p>
-                <p>Location: Beside Campus Library</p>
-                <p>Phone: 987-654-3210</p>
-            </div>
+              <div class="restaurant-card">
+                <img src="/Food-Delivery-Web/images/rest2.jpg" alt="Restaurant Image">
+                <div class="restaurant-info">
+                  <h3>G-Block </h3>
+                  <p>All Delicious food at your place</p>
+                  <a href="/Food-Delivery-Web/restro1.html" class="order-button">Order Here</a>
+                </div>
+              </div>
+
+              <div class="restaurant-card">
+                <img src="/Food-Delivery-Web/images/rest3.jpg" alt="Restaurant Image">
+                <div class="restaurant-info">
+                  <h3>AAHAAR Kulcha</h3>
+                  <p>All Delicious food at your place</p>
+                  <a href="/Food-Delivery-Web/restro1.html" class="order-button">Order Here</a>
+                </div>
+              </div>
+
+              <div class="restaurant-card">
+                <img src="/Food-Delivery-Web/images/rest4.jpg" alt="Restaurant Image">
+                <div class="restaurant-info">
+                  <h3>Jaggi Verka Shop</h3>
+                  <p>All Delicious food at your place</p>
+                  <a href="/Food-Delivery-Web/restro1.html" class="order-button">Order Here</a>
+                </div>
+              </div>
+
+              <div class="restaurant-card">
+                <img src="/Food-Delivery-Web/images/rest5.jpg" alt="Restaurant Image">
+                <div class="restaurant-info">
+                  <h3>TSLAS Canteen</h3>
+                  <p>All Delicious food at your place</p>
+                  <a href="/Food-Delivery-Web/restro1.html" class="order-button">Order Here</a>
+                </div>
+              </div>
+
+              <div class="restaurant-card">
+                <img src="/Food-Delivery-Web/images/rest6.jpg" alt="Restaurant Image">
+                <div class="restaurant-info">
+                  <h3>COS Honey's Cafe</h3>
+                  <p>All Delicious food at your place</p>
+                  <a href="/Food-Delivery-Web/restro1.html" class="order-button">Order Here</a>
+                </div>
+              </div>
+              
 
             <!-- Add more restaurant cards as needed -->
-            <a href="cart.html">View Cart</a>
+            
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
 </body>
 </html>
 

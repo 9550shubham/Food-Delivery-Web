@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
   }
   
   /* Styling the navbar */
@@ -16,9 +17,6 @@
     transition: background-color 0.3s ease-in-out;
     
   }
-  .nav-opt
-  {}
-  
   .container {
     display: flex;
     justify-content: space-between;
@@ -48,21 +46,7 @@
     color: #333;
     transition: color 0.3s ease-in-out;
   }
-  
-  .signin,
-  .signup {
-
-    /* display: inline-block;
     
-  padding: 5px 10px; 
-  background-color: #ff8000; 
-  color: #fff; 
-  text-align: center;
-  text-decoration: none;
-  border: none; 
-    cursor: pointer;
-  transition: background-color 0.3s ease-in-out; */
-  }
   
   /* Styling links on hover */
   .menu ul li a:hover {
@@ -166,11 +150,7 @@ header {
 
 /* new */
 
-*{
-    margin: 0%;
-    padding: 0%;
-    font-family: 'Poppins', sans-serif;
- }
+
  .main{
     display: flex;
 	height: 50%;
@@ -180,12 +160,15 @@ header {
     margin-top: 77px;
  }
  .main .left nav img{
-    width:400px;
+    width:500px;
     margin-top: 40px;
+    margin-left: 60px;
+    margin-right: 460px;
     
  }
  .main .left nav{
     display:block;
+    
     
     
  }
@@ -252,11 +235,13 @@ header {
     background-color: rgb(36, 19, 7);
     text-align: center;
     color: white;
-    padding: 44px;
+    padding: 80px 30px;
+    
 }
 .card .crd img{
-    width: 33%;
+    width: 30%;
 }
+
 .rest{
     display: flex;
     justify-content: center;
@@ -407,3 +392,33 @@ header {
     margin-left: 15px;
     cursor: pointer;
 }
+
+/* carousal */
+  .carousel {
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .slide-container {
+    display: flex;
+    animation: carousel-animation 20s linear infinite;
+    /* Adjust the timing as needed */
+  }
+  
+  .slide-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  @keyframes carousel-animation {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-200%);
+    }
+  }
+  
